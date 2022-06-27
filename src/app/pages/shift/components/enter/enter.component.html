@@ -1,0 +1,20 @@
+<div class="enterBox">
+  <div>
+    <div class="headerTxt">
+      {{ customerDetails.Name1 + " - " + customerDetails.Kunnr }}
+    </div>
+    <div>
+      {{ customerDetails.Street + " " + customerDetails.HouseNum1 }}
+    </div>
+    <div>
+      {{ customerDetails.Ort01 }}
+    </div>
+  </div>
+  <button type="button" class="btn btn-dark enterBtn" [disabled]="!isValid" (click)="enterShift()">
+    אישור
+  </button>
+
+  <!-- <button type="button" class="btn againBtn" routerLink="/shift/0">
+    סרקי קוד שנית
+  </button> -->
+</div>

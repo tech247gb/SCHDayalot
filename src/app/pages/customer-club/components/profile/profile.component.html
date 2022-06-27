@@ -1,0 +1,114 @@
+<div class="inputs">
+  <div class="row">
+    <div class="col-8 headerTxt">
+      פרטים אישיים
+    </div>
+    <div class="col-4 editIcon" (click)="isEdit = !isEdit">
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+  </div>
+
+  <div class="form-group inputBox">
+    <label for="inputFirstName" class="labelTxt">שם</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputFirstName"
+      placeholder="שם פרטי"
+      [(ngModel)]="userObj.FirstName"
+      [disabled]="!isEdit"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputLastName" class="labelTxt">שם משפחה</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputLastName"
+      placeholder="שם משפחה"
+      [(ngModel)]="userObj.LastName"
+      [disabled]="!isEdit"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputNumber" class="labelTxt">טלפון נייד</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputNumber"
+      placeholder="טלפון נייד"
+      [(ngModel)]="userObj.Contact_id"
+      [disabled]="1 == 1"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputBirthday" class="labelTxt">תאריך לידה</label>
+    <input
+      type="date"
+      class="form-control"
+      id="inputBirthday"
+      placeholder="תאריך לידה"
+      [(ngModel)]="userObj.Birthdate"
+      [disabled]="!isEdit"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputBirthday" class="labelTxt">יישוב</label>
+    <input
+      type="text"
+      class="form-control"
+      id="city"
+      placeholder="יישוב"
+      [(ngModel)]="userObj.City"
+      [disabled]="!isEdit"
+    />
+  </div>
+  <div class="hr1"></div>
+  <div class="headerTxt">
+    שיוך למועדון
+  </div>
+  <div *ngIf="userObj.Club">
+    <!-- <span *ngFor="let item of userObj.club"> -->
+    <ion-icon class="txtClub" name="checkmark-circle-outline"></ion-icon>
+    <span>{{ Club_name }}</span>
+    <!-- </span> -->
+  </div>
+  <div *ngIf="!userObj.Club">
+    <ion-icon class="txtClub" name="close-outline"></ion-icon>
+    <span>{{ Club_name }}</span>
+    <!-- </span> -->
+  </div>
+  <div class="hr1"></div>
+  <div class="headerTxt">
+    משוייך לדיילת
+  </div>
+  <div>
+    <ion-icon class="txtClub" name="person-circle-outline"></ion-icon>
+    <span>
+      {{ dayelet_name }}
+      <!-- {{ userObj.dayelet_id[0]["first_name"] }}
+      {{ userObj.attendant[0]["last_name"] }} -->
+    </span>
+  </div>
+  <div class="hr1"></div>
+  <div class="headerTxt">
+    הערות ללקוחה
+  </div>
+  <div>
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="1"
+        placeholder="יהיה זמין בגרסה הבאה - 2.0.1"
+        [disabled]="true"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isEdit">
+  <button type="submit" class="btn enterBtn" (click)="onSubmit()">
+    שמירה
+  </button>
+</div>

@@ -1,0 +1,17 @@
+<ion-header>
+  <app-header name="דיווחי משמרות"></app-header>
+</ion-header>
+
+<ion-content>
+  <app-shifts-list
+    *ngIf="shifts.length > 0"
+    [shiftsTime]="shifts"
+  ></app-shifts-list>
+
+  <div *ngIf="shifts.length == 0 && isLoad" class="notFound">
+    <ion-icon name="close-circle-outline" class="closeIcon"></ion-icon>
+    <div>
+      לא נמצאו משמרות
+    </div>
+  </div>
+</ion-content>

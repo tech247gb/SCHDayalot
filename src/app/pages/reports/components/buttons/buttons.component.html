@@ -1,0 +1,18 @@
+<div class="Shifts" (click)="onSubmitShifts()">
+  <ion-icon name="alarm-outline"></ion-icon>
+  <div>
+    דיווחי משמרות
+  </div>
+</div>
+<div class="others" routerLink="/pidyon-reports">
+  <ion-icon name="settings-outline"></ion-icon>
+  <div>
+    דו"חות פדיון
+  </div>
+</div>
+<div class="others" routerLink="/customer-reports" *ngIf="isGuerlain == '1'">
+  <ion-icon name="people-circle-outline"></ion-icon>
+  <div>
+    דו"ח לקוחות
+  </div>
+</div>

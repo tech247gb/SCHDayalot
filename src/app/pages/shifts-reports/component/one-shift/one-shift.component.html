@@ -1,0 +1,52 @@
+<div class="row shiftBox">
+  <div class="col-11">
+    <div class="Header row">
+      <div class="col-12">{{ oneShift["kunnrName"] }}</div>
+    </div>
+    <div class="row">
+      <div class="col-4 txtHe">
+        <div>
+          {{ "תחילת משמרת" }}
+        </div>
+        <div>
+          {{ "סיום משמרת" }}
+        </div>
+      </div>
+      <div class="col-8 txt">
+        <div>
+          {{ " - " + oneShift["date"] + "  |  " + oneShift["enterTime"] }}
+        </div>
+        <div *ngIf="oneShift.exitTime">
+          {{ " - " + oneShift["date"] + "  |   " + oneShift["exitTime"] }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-1 down" (click)="showDetails()">
+    <ion-icon
+      *ngIf="!oneShift.showDetails"
+      class="iconDown"
+      name="chevron-down-outline"
+    ></ion-icon>
+    <ion-icon
+      *ngIf="oneShift.showDetails"
+      class="iconDown"
+      name="chevron-up-outline"
+    ></ion-icon>
+  </div>
+</div>
+
+<div
+  class="productItem"
+  *ngIf="this.oneShift.showDetails"
+  [ngStyle]="{ height: heightPercent }"
+>
+    <app-productForShift [sales]="oneShift.sales"></app-productForShift>
+ 
+</div>
+
+<!-- 
+<div class="shiftDetails" *ngIf="oneShift.showDetails">
+  <app-report-details [shift]="oneShift"></app-report-details>
+</div> -->

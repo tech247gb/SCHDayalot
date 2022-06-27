@@ -1,0 +1,62 @@
+<div class="enterBox">
+  <div>
+    <div class="headerTxt">
+      {{ customerDetails.Name1 + " - " + customerDetails.Kunnr }}
+    </div>
+    <div>
+      {{ customerDetails.Street + " " + customerDetails.HouseNum1 }}
+    </div>
+    <div>
+      {{ customerDetails.Ort01 }}
+    </div>
+  </div>
+  <hr />
+  <div class="row no-gutters saleColor">
+    <div class="col-2">
+      <ion-icon name="cash-outline" class="saleIcon"></ion-icon>
+    </div>
+    <div class="col-7 saleText">
+      סה"כ מכירות
+    </div>
+    <div class="col-3 saleText">
+      {{ saleAmount | number }} <span>&#8362;</span>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="row no-gutters saleMemberColor" *ngIf="isGuerlain == '1'">
+    <div class="col-2">
+      <ion-icon name="people-circle-outline" class="saleIcon"></ion-icon>
+    </div>
+    <div class="col-7 saleText">
+      מכירות מחברי מועדון
+    </div>
+    <div class="col-3 saleText">
+      {{ saleMemberAmount | number }} <span>&#8362;</span>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="row no-gutters mamberColor">
+    <div class="col-2">
+      <ion-icon name="person-add-outline" class="saleIcon"></ion-icon>
+    </div>
+    <div class="col-7 saleText">
+      סה"כ לקוחות חדשים
+    </div>
+    <div class="col-3 saleText">
+      {{ memberAmount }}
+    </div>
+  </div>
+  <div class="line"></div>
+  <button
+    type="button"
+    class="btn btn-dark enterBtn"
+    [disabled]="!isValid"
+    (click)="endShift()"
+  >
+    סיום משמרת
+  </button>
+
+  <!-- <button type="button" class="btn againBtn" routerLink="/shift/0">
+    סרקי קוד שנית
+  </button> -->
+</div>

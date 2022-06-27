@@ -1,0 +1,30 @@
+<ion-header>
+  <app-header name="שאילתת מוצר"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="inputs" *ngIf="!product">
+    <input
+      type="number"
+      class="form-control mt-2"
+      placeholder="נא הזיני מספר פריט"
+      [(ngModel)]="productNum"
+    />
+    <button
+      type="button"
+      class="btn btn-dark searchBtn"
+      (click)="getProductDetails()"
+    >
+      תמצאי לי את המוצר
+    </button>
+  </div>
+  <div class="product" *ngIf="product">
+    <app-product [product]="product"></app-product>
+  </div>
+</ion-content>
+
+<ion-footer align="center" style="height: 60px;" *ngIf="product">
+  <button (click)="anotherSearch()" type="button" class="btn btn-dark addBtn">
+    שאילתה נוספת
+  </button>
+</ion-footer>

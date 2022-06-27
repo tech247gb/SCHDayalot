@@ -1,0 +1,75 @@
+<div class="row mainRow">
+  <div
+    *ngIf="shift.saleItems"
+    class="col-4"
+    [ngClass]="status == 1 ? 'nonSelectedBtn selectedBtn' : 'nonSelectedBtn'"
+    (click)="setStatus(1)"
+  >
+    מכירות
+  </div>
+  <div
+    *ngIf="shift.returnItems"
+    class="col-4"
+    [ngClass]="status == 2 ? 'nonSelectedBtn selectedBtn' : 'nonSelectedBtn'"
+    (click)="setStatus(2)"
+  >
+    החזרות
+  </div>
+  <div
+    *ngIf="shift.customers && isGuerlain == '1'"
+    class="col-4"
+    [ngClass]="status == 3 ? 'nonSelectedBtn selectedBtn' : 'nonSelectedBtn'"
+    (click)="setStatus(3)"
+  >
+    לקוחות
+  </div>
+</div>
+<div *ngIf="status == 1">
+  <div *ngIf="shift.saleItems.length > 0">
+    <div
+      *ngFor="let product of shift.saleItems; let i; of: index"
+      (click)="showProductDetails(product)"
+    >
+      <div class="product">{{ product.maktxHe }}</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <div class="product" *ngIf="shift.saleItems.length == 0">
+    לא התבצעו מכירות במשמרת זו.
+  </div>
+</div>
+<div *ngIf="status == 2">
+  <div *ngIf="shift.returnItems.length > 0">
+    <div *ngFor="let product of shift.returnItems">
+      <div class="product">{{ product.maktxHe }}</div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="product" *ngIf="shift.returnItems.length == 0">
+    לא התבצעו החזרות במשמרת זו.
+  </div>
+</div>
+
+<div *ngIf="status == 3">
+  <div *ngIf="shift.customers.length > 0">
+    <div *ngFor="let customer of shift.customers">
+      <div class="product">
+        <div>
+          שם: {{ customer.FirstName }} {{ customer.LastName }}
+          טלפון:
+          {{ customer.TelephonePrefix }}-{{ customer.TelephoneNumber }}
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="product" *ngIf="shift.customers.length == 0">
+    לא נרשמו לקוחות חדשים במשמרת זו.
+  </div>
+</div>
+
+<div *ngIf="currentProduct" class="blackscreen" (click)="removeProduct()"></div>
+<div class="productItem" *ngIf="currentProduct">
+  <app-product [product]="currentProduct" [type]="2"></app-product>
+</div>

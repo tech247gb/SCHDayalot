@@ -1,0 +1,66 @@
+.loginText {
+  color: white;
+  font-size: 18px;
+}
+
+.headerTxt {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.enterBox {
+  width: 90%;
+  margin-right: 5%;
+  margin-top: 5%;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 3px 5px 8px -2px rgba(135, 135, 135, 1);
+  text-align: right !important;
+}
+
+.enterBtn {
+  width: 90%;
+  background-color: rgb(12, 42, 50);
+  border-radius: 30px;
+  margin-right: 5%;
+  margin-top: 25px;
+}
+
+.againBtn {
+  width: 90%;
+  background-color: white;
+  color: rgb(12, 42, 50);
+  border-radius: 30px;
+  margin-right: 5%;
+  margin-top: 10px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #f5f5f5;
+  // margin-right: 5% !important;
+}
+
+.saleText {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 3px 0px;
+}
+
+.saleIcon {
+  font-weight: bold !important;
+  font-size: 16px !important;
+  padding-top: 6px;
+}
+
+.saleColor {
+  color: rgb(67, 160, 46);
+}
+
+.saleMemberColor {
+  color: rgb(161, 175, 0);
+}
+.mamberColor {
+  color: rgb(61, 91, 129);
+}

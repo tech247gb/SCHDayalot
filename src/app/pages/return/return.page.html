@@ -1,0 +1,17 @@
+<ion-header>
+  <app-header name="החזרות"></app-header>
+</ion-header>
+<ion-content>
+  <app-product-list [products]="products" [return]="true"></app-product-list>
+</ion-content>
+
+<ion-footer align="center" style="height: 60px;">
+  <button
+    routerLink="/home"
+    type="button"
+    class="btn btn-dark endBtn"
+    (click)="onSubmit()"
+  >
+    החזירי
+  </button>
+</ion-footer>

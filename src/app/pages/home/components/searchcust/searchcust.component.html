@@ -1,0 +1,40 @@
+<div class="searchCust">
+  <div class="txtBold">
+    איתור לקוח ומכירה
+  </div>
+  <div class="txt">
+    פרטי לקוח
+  </div>
+  <div class="row no-gutters">
+    <div class="col-10">
+      <input
+        type="text"
+        class="form-control inputNum"
+        [(ngModel)]="userNumber"
+        (input)="getCustomeresChange($event)"
+      />
+
+      <div class="namesTabel" *ngIf="userNumber != '' && showList">
+        <div
+          *ngFor="let customer of customers"
+          class="mainContiner"
+          (click)="setCustomer(customer)"
+        >
+          <div class="autoName">
+            {{ customer.FirstName }} {{ customer.LastName }}
+          </div>
+          <div class="autoPhone">
+            {{ customer.Contact_id }}
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2" (click)="getUser()">
+      <ion-icon
+        class="searchIcon"
+        name="chevron-forward-circle-outline"
+      ></ion-icon>
+    </div>
+  </div>
+</div>

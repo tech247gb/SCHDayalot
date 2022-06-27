@@ -1,0 +1,20 @@
+<ion-toolbar class="mt-4">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <div *ngIf="!name">
+    <img src="../../assets/img/logo.png" style="width: 100px; float: left;" />
+    <!-- <div class="dateTime">{{ datetime }}</div> -->
+  </div>
+  <div *ngIf="name" align="center">
+    <div class="headerTxt">{{ name }}</div>
+  </div>
+  <ion-buttons *ngIf="name" slot="end">
+    <ion-icon
+      class="backBtn"
+      (click)="back()"
+      name="chevron-forward-outline"
+    ></ion-icon>
+  </ion-buttons>
+</ion-toolbar>

@@ -1,0 +1,21 @@
+<ion-content>
+  <div class=" product">
+    <div class="nameTxt" *ngIf="!customer && !return">
+      לקוח לא מזוהה
+    </div>
+    <div *ngFor="let item of products; let i = index">
+      <div class="row ">
+        <div class="col-10 col1">
+          <app-product [product]="item"></app-product>
+        </div>
+        <div class="col-1 col1" (click)="deleteItem(i)">
+          <ion-icon class="iconX" name="trash-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="openBarCode()" type="button" class="btn btn-success addBtn">
+    <ion-icon class="btnIcon" name="add-circle-outline"></ion-icon>
+    <span class="btnTxt"> הוסיפי פריט</span>
+  </button>
+</ion-content>

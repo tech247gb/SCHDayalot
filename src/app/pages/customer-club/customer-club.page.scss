@@ -1,0 +1,17 @@
+ion-tab-button:focus {
+  ion-icon {
+    color: rgb(88, 178, 202) !important;
+  }
+  ion-label {
+    color: rgb(88, 178, 202) !important;
+  }
+
+  border-bottom: 2px solid rgb(88, 178, 202) !important;
+}
+
+.nameTxt {
+  text-align: center;
+  background-color: rgb(12, 42, 50);
+  color: white;
+  padding: 15px 0px;
+}

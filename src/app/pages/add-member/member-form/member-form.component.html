@@ -1,0 +1,119 @@
+<div class="inputs">
+  <div class="headerTxt">פרטים אישיים</div>
+  <div class="form-group inputBox">
+    <label for="inputFirstName" class="labelTxt">שם</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputFirstName"
+      placeholder="שם פרטי"
+      [(ngModel)]="userObj.FirstName"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputLastName" class="labelTxt">שם משפחה</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputLastName"
+      placeholder="שם משפחה"
+      [(ngModel)]="userObj.LastName"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputNumber" class="labelTxt">טלפון נייד</label>
+    <input
+      type="number"
+      class="form-control"
+      id="inputNumber"
+      placeholder="טלפון נייד"
+      [(ngModel)]="Contact_id"
+    />
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputBirthday" class="labelTxt">תאריך לידה</label>
+    <input
+      type="date"
+      class="form-control"
+      id="inputBirthday"
+      placeholder="תאריך לידה"
+      [(ngModel)]="userObj.Birthdate"
+    />
+  </div>
+  <div class="form-group inputBox" *ngIf="!inShift">
+    <label for="inputBirthday" class="labelTxt">סניף</label>
+    <input
+      type="text"
+      class="form-control"
+      id="city"
+      placeholder="מספר סניף"
+      [(ngModel)]="userObj.customerClub.AccountNumber"
+      (input)="getStorChange($event)"
+    />
+  </div>
+  <div class="namesTabel" *ngIf="showList">
+    <div
+      *ngFor="let stor of stors"
+      class="mainContiner"
+      (click)="setStor(stor)"
+    >
+      <div class="autoName">{{ stor.Kunnr }} - {{ stor.Name1 }}</div>
+
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="form-group inputBox">
+    <label for="inputBirthday" class="labelTxt">יישוב</label>
+    <input
+      type="text"
+      class="form-control"
+      id="city"
+      placeholder="יישוב"
+      [(ngModel)]="userObj.City"
+      (input)="getCityChange($event)"
+    />
+  </div>
+
+  <div class="namesTabel" *ngIf="userObj.City?.length > 1 && showList">
+    <div
+      *ngFor="let city of cities"
+      class="mainContiner"
+      (click)="setCity(city)"
+    >
+      <div class="autoName">
+        {{ city.CityName }}
+      </div>
+
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <div class="headerTxt">שיוך למועדון</div>
+  <div class="form-row row cbRow">
+    <div class="form-check col-4" *ngFor="let item of clubNamesArray">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        name="gridRadios"
+        [value]="item.Name"
+        [(ngModel)]="item.selected"
+        [checked]="item.selected"
+      />
+      <label class="form-check-label radioTxt" for="{{ item.Name }}">
+        {{ item.Name }}
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button type="submit" class="btn enterBtn" (click)="onSubmit()">
+        צירוף לקוח
+      </button>
+    </div>
+    <div class="col-6">
+      <button type="submit" class="btn cancelBtn" routerLink="/home">
+        ביטול
+      </button>
+    </div>
+  </div>
+</div>

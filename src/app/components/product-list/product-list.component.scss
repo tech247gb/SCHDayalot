@@ -1,0 +1,46 @@
+
+  .product {
+    // margin-top: 5%;
+    background-color: white;
+    // padding: 5px;
+    box-shadow: 3px 5px 8px -2px rgba(135, 135, 135, 1);
+    text-align: right !important;
+    padding-left: 0px !important;
+
+  }
+
+  .col1{
+      padding-left: 0 !important;
+  }
+  .iconX{
+      padding-top: 20px !important;
+      color: red;
+      font-weight: bold;
+  }
+  .nameTxt{
+    text-align: center;
+    background-color: rgb(12, 42, 50);
+    color: white;
+    padding: 15px 0px;
+  }
+ 
+.addBtn{
+    width: 27%;
+    background-color:white;
+    color:  rgb(12, 42, 50);
+    margin: 15px 15px 5px 17px;
+    padding: 0px 0px 3px 0px !important;
+
+}
+
+.btnTxt {
+    font-size: 10px;
+    font-weight: bold;
+    bottom: 5px;
+  }
+  
+  .btnIcon {
+    font-size: 14px;
+    position: relative;
+    top: 4px;
+  }

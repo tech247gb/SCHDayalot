@@ -1,0 +1,35 @@
+.logo {
+  padding: 0px 0px 20px 0px;
+  background-color: rgb(12, 42, 50);
+}
+
+.logo img {
+  margin-top: -20px;
+}
+
+.loginText {
+  color: white;
+  font-size: 18px;
+}
+
+.inputs {
+  width: 80%;
+  left: 10%;
+  background-color: white;
+  padding: 30px;
+  position: absolute;
+  top: 220px;
+  box-shadow: 3px 5px 8px -2px rgba(135, 135, 135, 1);
+  text-align: right !important;
+}
+
+.loginBtn {
+  width: 90%;
+  background-color: rgb(12, 42, 50);
+  border-radius: 30px;
+  margin-right: 5%;
+  margin-top: 10px;
+}
+.systemBtn {
+  margin-top: 200px;
+}

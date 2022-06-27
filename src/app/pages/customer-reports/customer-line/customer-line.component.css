@@ -1,0 +1,46 @@
+.Header {
+  font-weight: bold;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.txt {
+  font-size: 11px;
+  text-align: right;
+  padding: 3px !important;
+}
+
+.shiftBox {
+  width: 90%;
+  margin: 0px 5% 2px;
+  /* padding: 5px !important; */
+  background-color: rgb(240, 240, 240);
+}
+
+.shiftDetails {
+  width: 90%;
+  margin: 0px 5% 2px;
+}
+
+.mainR {
+  margin-top: -10px;
+}
+
+.txtHe {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: right;
+  padding: 5px !important;
+  padding-right: 15px !important;
+}
+
+.down {
+  background-color: #ccc;
+  padding: 0px !important;
+}
+
+.iconDown {
+  margin-left: 5px;
+  margin-top: 17px;
+}

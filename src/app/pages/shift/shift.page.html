@@ -1,0 +1,19 @@
+<ion-header>
+  <app-header *ngIf="showDetails == 1" name="כניסה למשמרת"></app-header>
+  <app-header *ngIf="showDetails == 2" name="סיום משמרת"></app-header>
+  <app-header *ngIf="showDetails == 4" name="סיום משמרת"></app-header>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="showDetails == 1">
+    <app-enter></app-enter>
+  </div>
+
+  <div *ngIf="showDetails == 2">
+    <app-end-shift></app-end-shift>
+  </div>
+
+  <div *ngIf="showDetails == 4">
+    <app-shift-without-barcode></app-shift-without-barcode>
+  </div>
+</ion-content>

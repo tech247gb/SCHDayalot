@@ -1,0 +1,66 @@
+<div class="row targetRow no-gutters" *ngIf="rowDetails.params">
+  <div class="col-2 targetHeader">
+    <div class="mainTXT">{{ rowDetails.name }}</div>
+  </div>
+  <div *ngIf="radioBT == 'b1'" class="col-5">
+    <div class="mainprice">{{ rowDetails.params.p1 }} &#8362;</div>
+  </div>
+  <div *ngIf="radioBT == 'b2'" class="col-5">
+    <div class="mainprice">{{ rowDetails.params.p7 }} &#8362;</div>
+  </div>
+</div>
+
+<div class="row no-gutters" *ngIf="rowDetails.params">
+  <div class="col-2"></div>
+  <div class="HeaderAmountTxt no-gutters mt-2" [ngClass]="radioBT == 'b2' ? 'col-4' : 'col-3'">
+    <div class="mul" *ngIf="radioBT == 'b1'">יעד</div>
+    <div class="perc" *ngIf="radioBT == 'b1'">
+      {{ rowDetails.params.p2 }} <span>&#8362;</span>
+    </div>
+    <div class="mul" *ngIf="radioBT == 'b2'">יעד חודש קודם</div>
+    <div class="perc" *ngIf="radioBT == 'b2'">
+      {{ rowDetails.params.p5 }} <span>&#8362;</span>
+    </div>
+  </div>
+  <div class="col-3 HeaderAmountTxt no-gutters mt-2" *ngIf="radioBT == 'b1'">
+    <div class="mul">יתרה</div>
+    <div class="perc">{{ rowDetails.params.p3 }} <span>&#8362;</span></div>
+  </div>
+  <div class="col-1 HeaderAmountTxt no-gutters mt-2" *ngIf="radioBT == 'b2'"></div>
+  <div [ngClass]="radioBT == 'b2' ? 'col-5' : 'col-4'">
+    <div class="row targetRow no-gutters">
+      <div class="col-12 HeaderAmountTxt">
+        <div class="mul" *ngIf="radioBT == 'b1'">מול יעד</div>
+        <div class="perc" *ngIf="radioBT == 'b1'">
+          {{ rowDetails.params.p4 }}%
+        </div>
+        <div class="mul" *ngIf="radioBT == 'b2'">מול יעד חודש קודם</div>
+
+        <div class="perc" *ngIf="radioBT == 'b2'">
+          {{ rowDetails.params.p6 }}%
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-12 targetHeader"></div>
+    </div> -->
+
+    <div class="graphBorder" *ngIf="radioBT == 'b1'">
+      <div [style.width]="rowDetails?.params.p4 + '%'" *ngIf="rowDetails.params.p4 < 50" class="graph colorRed"></div>
+      <div [style.width]="rowDetails?.params.p4 + '%'" *ngIf="rowDetails?.params.p4 >= 50 && rowDetails?.params.p4 < 90"
+        class="graph colorOrange"></div>
+      <div [style.width]="rowDetails?.params.p4 + '%'" *ngIf="rowDetails?.params.p4 >= 90" class="graph colorGreen">
+      </div>
+    </div>
+
+    <div class="graphBorder" *ngIf="radioBT == 'b2'">
+      <div [style.width]="rowDetails?.params.p6 + '%'" *ngIf="rowDetails.params.p6 < 50" class="graph colorRed"></div>
+      <div [style.width]="rowDetails?.params.p6 + '%'" *ngIf="rowDetails?.params.p6 >= 50 && rowDetails?.params.p6 < 90"
+        class="graph colorOrange"></div>
+      <div [style.width]="rowDetails?.params.p6 + '%'" *ngIf="rowDetails?.params.p6 >= 90" class="graph colorGreen">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line"></div>

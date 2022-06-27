@@ -1,0 +1,48 @@
+<div>
+  <div class="row topRow" *ngIf="isGuerlain == '1'">
+    <div class="col-6 addMember" (click)="add_member()">
+      <ion-icon name="person-add-outline"></ion-icon>
+      <div>
+        <div class="txtBold">הוסיפי</div>
+        לקוח מועדון
+      </div>
+    </div>
+    <div class="col-6 saleNotMember" (click)="sale_without()">
+      <ion-icon name="card-outline"></ion-icon>
+      <div>
+        <div class="txtBold">מכירה</div>
+        ללא חבר מועדון
+      </div>
+    </div>
+  </div>
+  <div class="row bottomRow" *ngIf="isGuerlain == '1'">
+    <div class="col-6 addMember askPrud">
+      <div routerLink="/product-info">
+        <div class="txtBold">שאילתת מוצר</div>
+      </div>
+    </div>
+    <div class="col-6 addMember reports">
+      <div routerLink="/reports">
+        <div class="txtBold">דוחות ודיווחים</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row topRow" *ngIf="isGuerlain == ''">
+    <div class="col-12 saleNotMemberNotGuerlain mt-2" (click)="sale_without()">
+      <ion-icon name="card-outline"></ion-icon>
+      <div class="txtBold">מכירה</div>
+    </div>
+
+    <div class="col-12 addMember askPrud">
+      <div routerLink="/product-info">
+        <div class="txtBold">שאילתת מוצר</div>
+      </div>
+    </div>
+    <div class="col-12 addMember reports">
+      <div routerLink="/reports">
+        <div class="txtBold">דוחות ודיווחים</div>
+      </div>
+    </div>
+  </div>
+</div>

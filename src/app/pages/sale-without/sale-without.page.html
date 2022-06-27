@@ -1,0 +1,24 @@
+<ion-header>
+  <app-header name="מכירה ללא חבר מועדון"></app-header>
+</ion-header>
+<ion-content>
+  <app-product-list [products]="products"></app-product-list>
+</ion-content>
+
+<!-- <scandit-sdk-barcode-picker
+  [scanSettings]="settings"
+  (scan)="onScan($event)"
+  (error)="onError($event)"
+></scandit-sdk-barcode-picker> -->
+<!-- <div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div> -->
+<ion-footer align="center" style="height: 60px;">
+  <button
+    routerLink="/home"
+    type="button"
+    class="btn btn-dark endBtn"
+    (click)="onSubmit()"
+    [disabled]="!isValid"
+  >
+    סיימי מכירה
+  </button>
+</ion-footer>

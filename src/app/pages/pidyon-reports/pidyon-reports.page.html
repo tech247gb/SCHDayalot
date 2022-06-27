@@ -1,0 +1,147 @@
+<ion-header>
+  <app-header
+    name="דוחות פדיון תקופה {{currentMonth}}/{{currentYear}}"
+    class="mainHeader"
+  ></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="position1">
+    <div class="mainRow" *ngIf="stores.length > 0">
+      <div class="row">
+        <div class="col-6 target">
+          <i class="far fa-user-circle"></i>
+          <span>נתונים אישיים</span>
+        </div>
+        <div class="col-6 date">
+          <!-- <div>נכון ל- 05.04.2020</div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 name">
+          {{detailsDayelet[0]['ZDAYELET_T']}}
+          <span class="idNum">{{detailsDayelet[0]['ZDAYELET']}} </span>
+        </div>
+      </div>
+      <div class="row" *ngIf="dayeletPiryon">
+        <div class="col-4 leftRow">
+          <div class="row no-gutters">
+            <div class="col-8 hedearTxt">סריקות</div>
+            <div class="col-4 hedearTxtIcon">
+              <span>&#8362;</span>
+            </div>
+          </div>
+          <div class="HeaderAmountTxt">
+            {{dayeletPiryon['A00O2TQU3MOHGS051JUU256FHC'] | number}}
+            <span>&#8362;</span>
+          </div>
+        </div>
+        <div class="col-4 middeleRow">
+          <div class="row no-gutters">
+            <div class="col-8 hedearTxt">שעות</div>
+            <div class="col-4 hedearTxtIcon">
+              <i class="far fa-clock"></i>
+            </div>
+          </div>
+          <div class="HeaderAmountTxt">{{ dayeletPiryon.Z_CKF_SLO_007}}</div>
+        </div>
+        <div class="col-4 leftRow">
+          <div class="row no-gutters">
+            <div class="col-8 hedearTxt">פריון אישי</div>
+            <div class="col-4 hedearTxtIcon">
+              <i class="fas fa-funnel-dollar"></i>
+            </div>
+          </div>
+          <div class="HeaderAmountTxt">
+            {{ dayeletPiryon['Z_CKF_SLO_005']}} <span>&#8362;</span>
+          </div>
+        </div>
+      </div>
+      <div class="notFound" *ngIf="dayeletPiryon.length ==  0 && isLoad">
+        <ion-icon name="close-circle-outline" class="closeIcon"></ion-icon>
+        <div>לא נמצאו דוחות פיריון אישי</div>
+      </div>
+    </div>
+    <!-- <div class="mainline"></div> -->
+
+    <!-- <div class="row">
+      <div class="col-12 target">
+        <i class="fas fa-bullseye"></i> <span>יעדים</span>
+      </div>
+    </div>
+
+    <div *ngFor="let item of detailsDayelet">
+      <app-row-pidyon [rowDetails]="item"></app-row-pidyon>
+    </div> -->
+    <div class="row mainRowHeader" *ngIf="stores.length > 0 && isLoad">
+      <div class="col-5 target">
+        <i class="fa fa-shopping-basket basketIcon"></i>
+
+        <span>נתונים חנותיים</span>
+      </div>
+      <div class="col-7 togglebuttons">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label
+            [ngClass]="radioBT =='b2' ? 'btn btn-light active' : 'btn btn-light'"
+          >
+            <input
+              type="radio"
+              name="options"
+              id="option1"
+              autocomplete="off"
+              value="b2"
+              [(ngModel)]="radioBT"
+              (click)="radioChange( 'b2')"
+            />
+            <span class="txtToggle"
+              >חודש קודם
+              <i class="far fa-calendar-alt ml-1"></i>
+            </span>
+          </label>
+
+          <label
+            [ngClass]="radioBT =='b1' ? 'btn btn-light active' : 'btn btn-light'"
+          >
+            <input
+              type="radio"
+              name="options"
+              id="option2"
+              autocomplete="off"
+              value="b1"
+              [(ngModel)]="radioBT"
+              (click)="radioChange( 'b1')"
+            />
+            <span class="txtToggle"
+              >יעד
+              <i class="fas fa-bullseye ml-1"></i>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let detailsStore of stores let i=index">
+    <div class="mainRow">
+      <div class="row">
+        <div class="col-12 target ML">
+          <span
+            ><b>{{detailsDayelet[i]['CCUSTOMER_T']}}</b>
+            {{detailsDayelet[i]['CCUSTOMER']}}
+          </span>
+        </div>
+      </div>
+
+      <div *ngFor="let item of detailsStore">
+        <app-row-pidyon
+          [rowDetails]="item"
+          [radioBT]="radioBT"
+        ></app-row-pidyon>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="stores.length == 0 && isLoad" class="notFound">
+    <ion-icon name="close-circle-outline" class="closeIcon"></ion-icon>
+    <div>לא נמצאו דוחות פדיון</div>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<div class="row no-gutters user">
+  <div class="col-7 mt-1" *ngIf="inShift == false">
+    <div class="userInfo">
+      שלום, {{ userDetails.Vorna }} {{ userDetails.Nachn }}
+    </div>
+    <div class="userInfo">מספר עובד: {{ userDetails.Pernr }}</div>
+  </div>
+  <div class="col-7 mt-1" *ngIf="inShift">
+    <div class="userInfo">
+      שלום, {{ userDetails.Vorna }} {{ userDetails.Nachn }} -
+      {{ userDetails.Pernr }}
+    </div>
+    <div class="userInfo">
+      שם חנות: {{ currentStor["Name1"] | slice: 0:25 }}
+    </div>
+  </div>
+  <div class="col-5">
+    <button type="button" class="btn btn-dark loginBtn" (click)="goEnterOut()">
+      <span *ngIf="inShift == false">התחילי משמרת</span>
+      <span *ngIf="inShift == true">סיימי משמרת</span>
+    </button>
+  </div>
+</div>

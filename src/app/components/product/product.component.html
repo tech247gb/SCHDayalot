@@ -1,0 +1,64 @@
+<div class="row prodBox" *ngIf="product && type == 1">
+  <div class="col-3 productBox" align="center">
+    <img
+      src="../../../assets/img/product/{{ product.Ean11 }}.jpg"
+      onerror="this.src='../../../assets/img/image-not-available.png', this.style='height: 80px;'"
+      style="height: 90px;"
+    />
+  </div>
+  <div class="col-6 productBox">
+    <div class="headerTxt">
+      {{ product.MaktxHe }}
+    </div>
+    <div class="txt">
+      {{ "פריט: " + product.Matnr }}
+    </div>
+    <div class="txt" *ngIf="product.parallel">
+      {{ "פרלל: " + product.parallel }}
+    </div>
+    <div class="txt">
+      {{ "ברקוד: " + product.Ean11 }}
+    </div>
+  </div>
+  <div class="col-2 productBox price">
+    {{ "₪" + product.Price.split(".")[0] }}
+  </div>
+</div>
+
+<div class="row prodBox" *ngIf="product && type == 2">
+  <div class="col-3 productBox" align="center">
+    <img
+      src="../../../assets/img/product/{{ product.ean11 }}.jpg"
+      onerror="this.src='../../../assets/img/image-not-available.png', this.style='height: 80px;'"
+      style="height: 90px;"
+    />
+  </div>
+  <div class="col-6 productBox">
+    <div class="headerTxt">
+      {{ product.maktxHe }}
+    </div>
+    <div class="txt">
+      {{ "פריט: " + product.matnr }}
+    </div>
+    <div class="txt">
+      {{ "פרלל: " + product.parallel }}
+    </div>
+    <div class="txt">
+      {{ "ברקוד: " + product.ean11 }}
+    </div>
+  </div>
+  <div class="col-2 productBox price">
+    {{ "₪" + product.price.split(".")[0] }}
+  </div>
+</div>
+
+<div class="row prodBox productBox1" *ngIf="!product">
+  <div class="col-12 headerTxt">
+    מוצר אינו קיים
+  </div>
+</div>
+
+<!-- ../../../assets/img/product/1037.jpg
+     ../../../assets/img/product/3346470613478.jpg
+http://localhost:8100/assets/img/product/3346470613478.jpg -->
+<!-- onerror="this.src='../../../assets/img/image-not-available.png', this.style='height: 80px;'" -->

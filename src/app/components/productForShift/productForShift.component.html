@@ -1,0 +1,76 @@
+<div class="mainContent">
+  <div class="row p-3">
+    <div class="col-12 amount">
+      סכום מכירות למשמרת <span>&#8362;</span>{{ saleAmount | number }}
+    </div>
+  </div>
+  <div class="mainline"></div>
+  <div *ngFor="let sale of sales">
+    <div class="row header no-gutters">
+      <div class="col-4" *ngIf="sale.actionType == '0'">
+        תעודה: {{ sale.saleId.split("_")[1] }}
+      </div>
+      <div class="col-4 back" *ngIf="sale.actionType == '1'">
+        החזרה - תעודה: {{ sale.saleId.split("_")[1] }}
+      </div>
+      <div class="col-4" *ngIf="sale.actionType == '0'">
+        מספר פריטים: {{ sale.salesorderdetailList.length }}
+      </div>
+      <div class="col-4 back" *ngIf="sale.actionType == '1'">
+        מספר פריטים: {{ sale.salesorderdetailList.length }}
+      </div>
+      <div class="col-4" *ngIf="sale.actionType == '0'">
+        שעת מכירה: {{ sale.dealDate | date: "HH:mm" : "+0000" }}
+      </div>
+      <div class="col-4 back" *ngIf="sale.actionType == '1'">
+        שעת החזרה: {{ sale.dealDate | date: "HH:mm" : "+0000" }}
+      </div>
+    </div>
+    <div class="mainline" style="background-color: #f5f5f5;"></div>
+    <div *ngFor="let product of sale.salesorderdetailList">
+      <div class="prodBox row">
+        <div class="col-3 productBox" align="center">
+          <img
+            src="../../../assets/img/product/{{ product.ean11 }}.jpg"
+            onerror="this.src='../../../assets/img/image-not-available.png', this.style='height: 60px;'"
+            style="height: 60px;"
+          />
+        </div>
+        <div
+          class="col-6 productBox"
+          [ngClass]="sale.actionType == '0' ? ' ' : 'back'"
+        >
+          <div class="headerTxt">
+            {{ product.maktxHe }}
+          </div>
+          <div class="txt">
+            {{ "פריט: " + product.matnr }}
+          </div>
+          <div class="txt" *ngIf="product.parallel">
+            {{ "פרלל: " + product.parallel }}
+          </div>
+          <div class="txt">
+            {{ "ברקוד: " + product.ean11 }}
+          </div>
+        </div>
+
+        <div class="col-2 productBox price" *ngIf="sale.actionType == '0'">
+        {{  product.price | number : '1.0-0'}} {{ "₪"}}
+        </div>
+
+        <div
+          class="col-2 productBox price backPrice"
+          *ngIf="sale.actionType == '1'"
+        >
+        {{  product.price | number : '1.0-0'}} {{ "₪"}} -
+        </div>
+      </div>
+      <div class="mainline"></div>
+    </div>
+    <div class="row prodBox productBox1" *ngIf="!sales">
+      <div class="col-12 headerTxt">
+        מוצר אינו קיים
+      </div>
+    </div>
+  </div>
+</div>

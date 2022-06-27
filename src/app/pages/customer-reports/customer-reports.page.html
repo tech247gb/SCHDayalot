@@ -1,0 +1,16 @@
+<ion-header>
+  <app-header name="דו''ח לקוחות"></app-header>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let customer of customers">
+    <app-customer-line [customer]="customer"></app-customer-line>
+  </div>
+
+  <div *ngIf="customers?.length == 0 && isLoad" class="notFound">
+    <ion-icon name="close-circle-outline" class="closeIcon"></ion-icon>
+    <div>
+      לא נמצאו לקוחות
+    </div>
+  </div>
+</ion-content>

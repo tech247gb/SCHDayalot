@@ -1,0 +1,20 @@
+<ion-content>
+  <app-product-list
+    *ngIf="inShift != false"
+    [products]="products"
+    [customer]="currentCustomer"
+  ></app-product-list>
+
+  <div class="notFound" *ngIf="inShift == false">
+    <ion-icon name="close-circle-outline" class="closeIcon"></ion-icon>
+    <div>
+      לא ניתן למכור מחוץ למשמרת
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer align="center" style="height: 60px;" *ngIf="inShift != false">
+  <button type="button" class="btn btn-dark endBtn" (click)="onSubmit()">
+    סיימי מכירה
+  </button>
+</ion-footer>

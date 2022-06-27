@@ -1,0 +1,15 @@
+<ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart($event)"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd($event)"
+>
+  <div class="shifts" #scrollElement>
+    <div *ngFor="let shift of shiftsTime; let i = index">
+      <app-one-shift
+        [oneShift]="shift"
+        (click)="shiftClicked(i)"
+      ></app-one-shift>
+    </div>
+  </div>
+</ion-content>

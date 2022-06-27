@@ -1,0 +1,195 @@
+.name {
+  text-align: right;
+  font-weight: bold;
+  padding: 0px 4px;
+  font-size: 13px;
+  margin-top: -3px;
+}
+.idNum {
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.date {
+  font-size: 12px;
+  text-align: left;
+  padding: 4px;
+  margin-top: 1px;
+}
+
+.Content {
+  padding: 7px 20px !important;
+  overflow: hidden;
+}
+
+.hedearTxt {
+  text-align: right;
+  color: rgb(97, 97, 97);
+}
+
+.hedearTxtIcon {
+  text-align: left;
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(97, 97, 97);
+}
+
+.HeaderAmountTxt {
+  text-align: right;
+  font-size: 28px;
+  margin-top: -12px;
+}
+
+.HeaderAmountTxt span {
+  text-align: right;
+  font-size: 14px;
+}
+
+.middeleRow {
+  border-right: 1px solid #cccc;
+  border-left: 1px solid #cccc;
+  padding: 0px 7px !important;
+  margin: 0 !important;
+}
+
+.leftRow {
+  padding: 0px 7px !important;
+  margin: 0 !important;
+}
+
+.line {
+  position: relative;
+  width: 105%;
+  background-color: #cccc;
+  margin: 2px 0px;
+  padding: 0px !important;
+  left: 2%;
+  height: 1px;
+}
+.target {
+  padding: 4px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.target i {
+  margin-top: 2px;
+  margin-left: 1px;
+  color: rgb(139, 139, 139);
+}
+.target span {
+  margin-right: 8px;
+}
+.targetRow {
+  padding: 5px 0px !important;
+}
+
+.targetHeader {
+  text-align: right;
+}
+.mul {
+  margin-top: -10px;
+  font-size: 10px;
+}
+
+.yaad {
+  margin-top: -6px;
+}
+
+.graphBorder {
+  position: relative;
+  width: 100%;
+  height: 7px;
+  border: 1px solid rgb(97, 97, 97);
+  border-radius: 20px;
+  margin-top: -10px;
+}
+.graph {
+  position: absolute;
+  right: 0px;
+
+  height: 5px;
+  border-radius: 20px;
+}
+
+.colorRed {
+  background-color: red;
+}
+
+.colorOrange {
+  background-color: orangered;
+}
+
+.colorGreen {
+  background-color: green;
+}
+
+.mainRow {
+  padding: 5px 20px !important;
+  position: relative;
+  width: 94%;
+  // margin-left: 5%;
+  margin-right: 3%;
+  margin-top: 10px;
+  overflow: hidden;
+  //background-color: red;
+  box-shadow: 3px 5px 8px -2px rgba(135, 135, 135, 1);
+  border: 1px solid #f5f5f5;
+}
+.position1 {
+  position: sticky;
+}
+
+.mainRowHeader {
+  padding: 6px 12px 0px 12px !important;
+  position: relative;
+  width: 96%;
+  // margin-left: 5%;
+  margin-right: 2%;
+  margin-top: 8 px;
+  overflow: hidden;
+  font-size: 13px;
+
+  //background-color: red;
+  // box-shadow: 3px 5px 8px -2px rgba(135, 135, 135, 1);
+  // border: 1px solid #f5f5f5;
+}
+
+.basketIcon {
+  padding-top: 4px !important;
+}
+
+.ML {
+  margin-top: -10px !important;
+}
+
+.togglebuttons {
+  direction: ltr !important;
+  margin-top: 5px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.btn-group-toggle {
+  height: 22px !important;
+}
+
+.btn-secondary,
+.btn-light {
+  font-size: 12px !important;
+  padding: 1px 10px 1px 10px !important;
+  width: 100px !important;
+}
+
+.txtToggle {
+  margin-top: -14px !important;
+}
+
+.notFound {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.closeIcon {
+  font-size: 40px;
+}

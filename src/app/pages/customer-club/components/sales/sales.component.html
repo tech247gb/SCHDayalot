@@ -1,0 +1,7 @@
+<div *ngFor="let sale of saleItemsHistory">
+  <div class="sale">{{ sale.maktxHe }}</div>
+  <div class="saleDateTime">
+     {{ sale.date |  date: "HH:mm" }} | {{ sale.date | date: "dd/MM/yyyy" }}
+  </div>
+  <div class="mainline"></div>
+</div>

@@ -1,0 +1,27 @@
+<ion-header>
+  <app-header name="כרטיס חבר מועדון"></app-header>
+  <div class="nameTxt">
+    {{ currentCustomer["FirstName"] }} {{ currentCustomer[ "LastName"] }}
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-tabs selectedIndex="1">
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="profile">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>צפייה בפרופיל</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="sale">
+        <ion-icon name="card-outline"></ion-icon>
+        <ion-label>בצעי מכירה</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="edit">
+        <ion-icon name="basket-outline"></ion-icon>
+        <ion-label>מכירות</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

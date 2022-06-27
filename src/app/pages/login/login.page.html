@@ -1,0 +1,52 @@
+<ion-content>
+  <div class="logo">
+    <div align="center">
+      <img src="../../../assets/img/logo-sch-eng.png" style="width: 80%;" alt="" />
+      <p class="loginText">התחברות</p>
+    </div>
+  </div>
+
+  <div class="loginBox">
+    <div class="inputs">
+      <div class="form-group">
+        <label for="userName">הזיני שם משתמש</label>
+        <input placeholder="מספר נייד" type="number" class="form-control" id="userName" [(ngModel)]="dayelet.Usrid" />
+      </div>
+      <div class="form-group">
+        <label for="password">הזיני סיסמה</label>
+        <input placeholder="מספר עובד" type="number" class="form-control" id="password" [(ngModel)]="dayelet.Pernr" />
+      </div>
+      <button type="button" class="btn btn-dark loginBtn" (click)="getDayelet()">
+        התחברי
+      </button>
+    </div>
+  </div>
+
+  <!-- <div class="row no-gutters text-center systemBtn">
+    <div class="col-3 p-1">
+      <button [ngClass]="systemSelected == 1 ? 'btn btn-info btnTime' : 'btn btn-outline-info btnTime'" type="button"
+        (click)="systemSelect(1)">
+        <span>DEV</span>
+      </button>
+    </div>
+    <div class="col-3 p-1">
+      <button [ngClass]="systemSelected == 2 ? 'btn btn-info btnTime' : 'btn btn-outline-info btnTime'" type="button"
+        (click)="systemSelect(2)">
+        <span> QA</span>
+      </button>
+    </div> -->
+  <!-- <div class="col-12 p-1 pr-4"> -->
+  <!-- <div class="col-3 p-1">
+      <button [ngClass]="systemSelected == 3 ? 'btn btn-info btnTime' : 'btn btn-outline-info btnTime'" type="button"
+        (click)="systemSelect(3)">
+        <span>PROD</span>
+      </button>
+    </div>
+    <div class="col-3 p-1">
+      <button [ngClass]="systemSelected == 4 ? 'btn btn-info btnTime' : 'btn btn-outline-info btnTime'" type="button"
+        (click)="systemSelect(4)">
+        <span>SandBox</span>
+      </button>
+    </div>
+  </div> -->
+</ion-content>

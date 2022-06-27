@@ -1,0 +1,16 @@
+<ion-header>
+  <app-header name="שאילתת מוצר"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="product">
+    <app-product [product]="product"></app-product>
+  </div>
+</ion-content>
+
+<ion-footer align="center" style="height: 60px;">
+  <button (click)="openBarCode()" type="button" class="btn btn-dark addBtn">
+    שאילתה נוספת
+  </button>
+ 
+</ion-footer>
