@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@awesome-cordova-plugins/core": "^5.44.0",
     "@awesome-cordova-plugins/web-intent": "^5.39.0",
     "@capacitor/core": "1.5.0",
     "@ionic-native/app-rate": "^5.24.0",

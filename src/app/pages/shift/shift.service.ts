@@ -69,7 +69,7 @@ export class ShiftService {
         this.router.navigate(['/home']);
       }
     }else{
-      this.utils.presentToast('מצטערת! קיימת בעיה בחיבור אינטרנט.');
+      this.utils.presentToast('לא ניתן להתחיל משמרת ללא חיבור לאינטרנט');
       this.router.navigate(['/home']);
     }
     
@@ -112,6 +112,7 @@ export class ShiftService {
       }
     }
     else{
+      this.utils.presentToast('לא ניתן לסיים משמרת ללא חיבור לאינטרנט');
       this.router.navigate(['/home']);
     }
   }

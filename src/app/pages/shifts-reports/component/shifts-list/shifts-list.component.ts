@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import { IonContent } from "@ionic/angular";
+import { Network } from "@ionic-native/network/ngx";
 
 @Component({
   selector: "app-shifts-list",
@@ -18,7 +19,7 @@ export class ShiftsListComponent implements OnInit {
   // @ViewChildren("scrollElement") content: IonContent;
   @ViewChild("content", { static: false }) content: IonContent;
   scroll: any;
-  constructor() {}
+  constructor(public network:Network) {}
 
   ngOnInit() {
     //  console.log("15", this.shiftsTime);
