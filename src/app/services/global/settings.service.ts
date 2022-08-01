@@ -5,19 +5,26 @@ import { Injectable } from "@angular/core";
 })
 export class SettingsService {
   // // ***** DEV *****
-  // public globalURL: string = "https://192.168.101.219:5000/ecc/";
-  // public globalServerURL: string = "https://192.168.101.219:5000/";
+  // public globalURL: string = "https://80.74.112.219/ecc/";
+  // public globalServerURL: string = "https://80.74.112.219:5000/";
+  // public branch:string ='dev';
+
 
   // ***** QA *****
-  // public globalURL: string = "https://192.168.101.220:5000/ecc/";
-  // public globalServerURL: string = "https://192.168.101.220:5000/";
+  // public globalURL: string = "https://80.74.112.220:5000/ecc/";
+  // public globalServerURL: string = "https://80.74.112.220:5000/";
+  // public branch:string ='qas';
+
   
-   public globalURL: string = "https://dysch-dev.sch.co.il:5000/ecc/";
-   public globalServerURL: string = "https://dysch-dev.sch.co.il:5000/";
+  //  public globalURL: string = "https://dysch-dev.sch.co.il:5000/ecc/";
+  //  public globalServerURL: string = "https://dysch-dev.sch.co.il:5000/";
+  // public branch:string ='qas';
 
   // ***** PROD *****
-  // public globalURL: string = "https://dysch.sch.co.il:5000/ecc/";
-  // public globalServerURL: string = "https://dysch.sch.co.il:5000/";
+  public globalURL: string = "https://80.74.112.215:5000/ecc/";
+  public globalServerURL: string = "https://80.74.112.215:5000/";
+  public branch:string ='prod';
+
 
   // ***** SAND BOX *****
   // public globalURL: string = "https://192.168.101.220:5001/ecc/";

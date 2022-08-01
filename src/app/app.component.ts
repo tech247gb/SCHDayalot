@@ -99,6 +99,7 @@ export class AppComponent implements OnInit {
   ];
 
   public userName = {};
+  env:any;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -199,12 +200,16 @@ export class AppComponent implements OnInit {
   }
   initializeApp() {
     this.version = this.settingsService.currentVersion;
+    this.version = this.settingsService.branch
     this.checkStatusShift();
     this.platform.ready().then(() => {
-      const updateUrl = 'https://dysch-dev.sch.co.il:5000/SCHDayalot.xml';
+      const updateUrl = this.settingsService.globalServerURL+'SCHDayalot.xml';
       this.appUpdate.checkAppUpdate(updateUrl).then(update => {
-        console.log(update);
-        alert("Update Status:  "+update.msg);
+        if(update.code === 202){
+          alert("האפליקציה עודכנה בהצלחה");
+        }else if(update.code === 201){
+          alert("סטטוס עדכון: הצלחה, צריך עדכון");
+        }
       }).catch(error=>{
         console.log(error);
          alert("Error: "+error.msg);
